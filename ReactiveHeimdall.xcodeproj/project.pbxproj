@@ -9,8 +9,15 @@
 /* Begin PBXBuildFile section */
 		226D4D481A8C96B000191B2A /* ReactiveHeimdall.h in Headers */ = {isa = PBXBuildFile; fileRef = 226D4D471A8C96B000191B2A /* ReactiveHeimdall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226D4D4E1A8C96B000191B2A /* ReactiveHeimdall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D421A8C96B000191B2A /* ReactiveHeimdall.framework */; };
-		226D4D551A8C96B000191B2A /* ReactiveHeimdallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D4D541A8C96B000191B2A /* ReactiveHeimdallTests.swift */; };
 		226D4D5F1A8C9F3600191B2A /* Heimdall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D5E1A8C9F3600191B2A /* Heimdall.framework */; };
+		226D4D621A8CA06500191B2A /* ReactiveHeimdall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D4D611A8CA06500191B2A /* ReactiveHeimdall.swift */; };
+		226D4D641A8CA50100191B2A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D631A8CA50100191B2A /* ReactiveCocoa.framework */; };
+		226D4D6F1A8CAADD00191B2A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D6D1A8CAADD00191B2A /* Nimble.framework */; };
+		226D4D701A8CAADD00191B2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D6E1A8CAADD00191B2A /* Quick.framework */; };
+		226D4D721A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */; };
+		226D4D741A8CABAE00191B2A /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D731A8CABAE00191B2A /* LlamaKit.framework */; };
+		226D4D751A8CAD5B00191B2A /* Heimdall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D5E1A8C9F3600191B2A /* Heimdall.framework */; };
+		226D4D771A8CADBA00191B2A /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D761A8CADBA00191B2A /* KeychainAccess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +36,14 @@
 		226D4D471A8C96B000191B2A /* ReactiveHeimdall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveHeimdall.h; sourceTree = "<group>"; };
 		226D4D4D1A8C96B000191B2A /* ReactiveHeimdallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveHeimdallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D4D531A8C96B000191B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226D4D541A8C96B000191B2A /* ReactiveHeimdallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveHeimdallTests.swift; sourceTree = "<group>"; };
 		226D4D5E1A8C9F3600191B2A /* Heimdall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Heimdall.framework; path = Carthage/Build/iOS/Heimdall.framework; sourceTree = "<group>"; };
+		226D4D611A8CA06500191B2A /* ReactiveHeimdall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHeimdall.swift; sourceTree = "<group>"; };
+		226D4D631A8CA50100191B2A /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		226D4D6D1A8CAADD00191B2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		226D4D6E1A8CAADD00191B2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHeimdallSpec.swift; sourceTree = "<group>"; };
+		226D4D731A8CABAE00191B2A /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
+		226D4D761A8CADBA00191B2A /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D4D641A8CA50100191B2A /* ReactiveCocoa.framework in Frameworks */,
 				226D4D5F1A8C9F3600191B2A /* Heimdall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D4D771A8CADBA00191B2A /* KeychainAccess.framework in Frameworks */,
+				226D4D751A8CAD5B00191B2A /* Heimdall.framework in Frameworks */,
+				226D4D741A8CABAE00191B2A /* LlamaKit.framework in Frameworks */,
+				226D4D6F1A8CAADD00191B2A /* Nimble.framework in Frameworks */,
+				226D4D701A8CAADD00191B2A /* Quick.framework in Frameworks */,
 				226D4D4E1A8C96B000191B2A /* ReactiveHeimdall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +75,11 @@
 		226D4D381A8C96B000191B2A = {
 			isa = PBXGroup;
 			children = (
+				226D4D761A8CADBA00191B2A /* KeychainAccess.framework */,
+				226D4D731A8CABAE00191B2A /* LlamaKit.framework */,
+				226D4D6D1A8CAADD00191B2A /* Nimble.framework */,
+				226D4D6E1A8CAADD00191B2A /* Quick.framework */,
+				226D4D631A8CA50100191B2A /* ReactiveCocoa.framework */,
 				226D4D5E1A8C9F3600191B2A /* Heimdall.framework */,
 				226D4D441A8C96B000191B2A /* ReactiveHeimdall */,
 				226D4D511A8C96B000191B2A /* ReactiveHeimdallTests */,
@@ -76,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				226D4D471A8C96B000191B2A /* ReactiveHeimdall.h */,
+				226D4D611A8CA06500191B2A /* ReactiveHeimdall.swift */,
 				226D4D451A8C96B000191B2A /* Supporting Files */,
 			);
 			path = ReactiveHeimdall;
@@ -92,7 +117,7 @@
 		226D4D511A8C96B000191B2A /* ReactiveHeimdallTests */ = {
 			isa = PBXGroup;
 			children = (
-				226D4D541A8C96B000191B2A /* ReactiveHeimdallTests.swift */,
+				226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */,
 				226D4D521A8C96B000191B2A /* Supporting Files */,
 			);
 			path = ReactiveHeimdallTests;
@@ -146,6 +171,7 @@
 				226D4D491A8C96B000191B2A /* Sources */,
 				226D4D4A1A8C96B000191B2A /* Frameworks */,
 				226D4D4B1A8C96B000191B2A /* Resources */,
+				226D4D651A8CAA4500191B2A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -164,7 +190,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Rheinfabrik;
+				ORGANIZATIONNAME = "B264 GmbH";
 				TargetAttributes = {
 					226D4D411A8C96B000191B2A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -217,6 +243,25 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Heimdall.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		226D4D651A8CAA4500191B2A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Heimdall.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			outputPaths = (
 			);
@@ -231,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D4D621A8CA06500191B2A /* ReactiveHeimdall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226D4D551A8C96B000191B2A /* ReactiveHeimdallTests.swift in Sources */,
+				226D4D721A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +428,11 @@
 		226D4D5C1A8C96B000191B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -393,15 +441,18 @@
 				INFOPLIST_FILE = ReactiveHeimdallTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		226D4D5D1A8C96B000191B2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ReactiveHeimdallTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

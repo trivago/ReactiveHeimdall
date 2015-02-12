@@ -1,1 +1,2 @@
 git "../Heimdall.swift" "master"
+github "ReactiveCocoa/ReactiveCocoa" ~> 2.4
