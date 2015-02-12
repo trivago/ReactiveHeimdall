@@ -10,6 +10,7 @@
 		226D4D481A8C96B000191B2A /* ReactiveHeimdall.h in Headers */ = {isa = PBXBuildFile; fileRef = 226D4D471A8C96B000191B2A /* ReactiveHeimdall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226D4D4E1A8C96B000191B2A /* ReactiveHeimdall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D421A8C96B000191B2A /* ReactiveHeimdall.framework */; };
 		226D4D551A8C96B000191B2A /* ReactiveHeimdallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D4D541A8C96B000191B2A /* ReactiveHeimdallTests.swift */; };
+		226D4D5F1A8C9F3600191B2A /* Heimdall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D5E1A8C9F3600191B2A /* Heimdall.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		226D4D4D1A8C96B000191B2A /* ReactiveHeimdallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveHeimdallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D4D531A8C96B000191B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226D4D541A8C96B000191B2A /* ReactiveHeimdallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveHeimdallTests.swift; sourceTree = "<group>"; };
+		226D4D5E1A8C9F3600191B2A /* Heimdall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Heimdall.framework; path = Carthage/Build/iOS/Heimdall.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D4D5F1A8C9F3600191B2A /* Heimdall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +56,7 @@
 		226D4D381A8C96B000191B2A = {
 			isa = PBXGroup;
 			children = (
+				226D4D5E1A8C9F3600191B2A /* Heimdall.framework */,
 				226D4D441A8C96B000191B2A /* ReactiveHeimdall */,
 				226D4D511A8C96B000191B2A /* ReactiveHeimdallTests */,
 				226D4D431A8C96B000191B2A /* Products */,
@@ -124,6 +128,7 @@
 				226D4D3E1A8C96B000191B2A /* Frameworks */,
 				226D4D3F1A8C96B000191B2A /* Headers */,
 				226D4D401A8C96B000191B2A /* Resources */,
+				226D4D601A8C9F4E00191B2A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -203,6 +208,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		226D4D601A8C9F4E00191B2A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Heimdall.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		226D4D3D1A8C96B000191B2A /* Sources */ = {
@@ -323,6 +345,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveHeimdall/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -338,6 +364,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveHeimdall/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -395,6 +425,7 @@
 				226D4D5A1A8C96B000191B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		226D4D5B1A8C96B000191B2A /* Build configuration list for PBXNativeTarget "ReactiveHeimdallTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +434,7 @@
 				226D4D5D1A8C96B000191B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

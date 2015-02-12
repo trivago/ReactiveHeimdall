@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22BC44611A8A3FBA00AB0A14 /* AccessTokenKeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC44601A8A3FBA00AB0A14 /* AccessTokenKeychainStorage.swift */; };
+		22BC44631A8A402300AB0A14 /* AccessTokenKeychainStorageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC44621A8A402300AB0A14 /* AccessTokenKeychainStorageSpec.swift */; };
+		22BC44651A8A442500AB0A14 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BC44641A8A442500AB0A14 /* KeychainAccess.framework */; };
+		22BC44661A8A445D00AB0A14 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BC44641A8A442500AB0A14 /* KeychainAccess.framework */; };
+		22BC446C1A8B858D00AB0A14 /* AccessTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC446B1A8B858D00AB0A14 /* AccessTokenStorage.swift */; };
+		DC545DC81A89F0F10051A575 /* Heimdall.h in Headers */ = {isa = PBXBuildFile; fileRef = DC545DC71A89F0F10051A575 /* Heimdall.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC545DCE1A89F0F10051A575 /* Heimdall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC545DC21A89F0F10051A575 /* Heimdall.framework */; };
+		DC545DE21A89F5080051A575 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC545DE11A89F5080051A575 /* LlamaKit.framework */; };
+		DC545DE61A89F9E40051A575 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC545DE41A89F9E30051A575 /* Nimble.framework */; };
+		DC545DE71A89F9E40051A575 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC545DE51A89F9E30051A575 /* Quick.framework */; };
+		DC545DEB1A89FFDA0051A575 /* Heimdall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC545DEA1A89FFDA0051A575 /* Heimdall.swift */; };
+		DCA5B98D1A8A12E700667D32 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B98C1A8A12E700667D32 /* NSDateExtensions.swift */; };
+		DCA5B98F1A8A296300667D32 /* NSDateExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B98E1A8A296300667D32 /* NSDateExtensionsSpec.swift */; };
+		DCA5B9911A8A2B9700667D32 /* HeimdallSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9901A8A2B9700667D32 /* HeimdallSpec.swift */; };
+		DCA5B9931A8A300100667D32 /* AeroGearHttpStub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9921A8A300100667D32 /* AeroGearHttpStub.framework */; };
+		DCA5B9951A8A317900667D32 /* authorize-valid.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B9941A8A317900667D32 /* authorize-valid.json */; };
+		DCA5B9961A8A331600667D32 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC545DE11A89F5080051A575 /* LlamaKit.framework */; };
+		DCA5B99A1A8A385B00667D32 /* authorize-invalid-token.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B9971A8A385B00667D32 /* authorize-invalid-token.json */; };
+		DCA5B99B1A8A385B00667D32 /* authorize-invalid-type.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B9981A8A385B00667D32 /* authorize-invalid-type.json */; };
+		DCA5B99C1A8A385B00667D32 /* authorize-invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B9991A8A385B00667D32 /* authorize-invalid.json */; };
+		DCA5B99F1A8A455700667D32 /* request-invalid-norefresh.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B99D1A8A455700667D32 /* request-invalid-norefresh.json */; };
+		DCA5B9A01A8A455700667D32 /* request-valid.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B99E1A8A455700667D32 /* request-valid.json */; };
+		DCA5B9A21A8A4A8C00667D32 /* request-invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5B9A11A8A4A8C00667D32 /* request-invalid.json */; };
+		DCA5B9A51A8A565C00667D32 /* StubResponseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9A41A8A565C00667D32 /* StubResponseExtensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC545DCF1A89F0F10051A575 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC545DB91A89F0F10051A575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC545DC11A89F0F10051A575;
+			remoteInfo = "oauth-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22BC44601A8A3FBA00AB0A14 /* AccessTokenKeychainStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenKeychainStorage.swift; sourceTree = "<group>"; };
+		22BC44621A8A402300AB0A14 /* AccessTokenKeychainStorageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenKeychainStorageSpec.swift; sourceTree = "<group>"; };
+		22BC44641A8A442500AB0A14 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		22BC446B1A8B858D00AB0A14 /* AccessTokenStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenStorage.swift; sourceTree = "<group>"; };
+		DC545DC21A89F0F10051A575 /* Heimdall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heimdall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC545DC61A89F0F10051A575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC545DC71A89F0F10051A575 /* Heimdall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Heimdall.h; sourceTree = "<group>"; };
+		DC545DCD1A89F0F10051A575 /* HeimdallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeimdallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC545DD31A89F0F10051A575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC545DE11A89F5080051A575 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
+		DC545DE41A89F9E30051A575 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		DC545DE51A89F9E30051A575 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		DC545DEA1A89FFDA0051A575 /* Heimdall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heimdall.swift; sourceTree = "<group>"; };
+		DCA5B98C1A8A12E700667D32 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		DCA5B98E1A8A296300667D32 /* NSDateExtensionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionsSpec.swift; sourceTree = "<group>"; };
+		DCA5B9901A8A2B9700667D32 /* HeimdallSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeimdallSpec.swift; sourceTree = "<group>"; };
+		DCA5B9921A8A300100667D32 /* AeroGearHttpStub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AeroGearHttpStub.framework; path = Carthage/Build/iOS/AeroGearHttpStub.framework; sourceTree = "<group>"; };
+		DCA5B9941A8A317900667D32 /* authorize-valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "authorize-valid.json"; sourceTree = "<group>"; };
+		DCA5B9971A8A385B00667D32 /* authorize-invalid-token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "authorize-invalid-token.json"; sourceTree = "<group>"; };
+		DCA5B9981A8A385B00667D32 /* authorize-invalid-type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "authorize-invalid-type.json"; sourceTree = "<group>"; };
+		DCA5B9991A8A385B00667D32 /* authorize-invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "authorize-invalid.json"; sourceTree = "<group>"; };
+		DCA5B99D1A8A455700667D32 /* request-invalid-norefresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-invalid-norefresh.json"; sourceTree = "<group>"; };
+		DCA5B99E1A8A455700667D32 /* request-valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-valid.json"; sourceTree = "<group>"; };
+		DCA5B9A11A8A4A8C00667D32 /* request-invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-invalid.json"; sourceTree = "<group>"; };
+		DCA5B9A41A8A565C00667D32 /* StubResponseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponseExtensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC545DBE1A89F0F10051A575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22BC44651A8A442500AB0A14 /* KeychainAccess.framework in Frameworks */,
+				DC545DE21A89F5080051A575 /* LlamaKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC545DCA1A89F0F10051A575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC545DE71A89F9E40051A575 /* Quick.framework in Frameworks */,
+				DC545DE61A89F9E40051A575 /* Nimble.framework in Frameworks */,
+				DCA5B9931A8A300100667D32 /* AeroGearHttpStub.framework in Frameworks */,
+				DCA5B9961A8A331600667D32 /* LlamaKit.framework in Frameworks */,
+				22BC44661A8A445D00AB0A14 /* KeychainAccess.framework in Frameworks */,
+				DC545DCE1A89F0F10051A575 /* Heimdall.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC545DB81A89F0F10051A575 = {
+			isa = PBXGroup;
+			children = (
+				DC545DE41A89F9E30051A575 /* Nimble.framework */,
+				DC545DE51A89F9E30051A575 /* Quick.framework */,
+				DCA5B9921A8A300100667D32 /* AeroGearHttpStub.framework */,
+				DC545DE11A89F5080051A575 /* LlamaKit.framework */,
+				22BC44641A8A442500AB0A14 /* KeychainAccess.framework */,
+				DC545DC41A89F0F10051A575 /* Heimdall */,
+				DC545DD11A89F0F10051A575 /* HeimdallTests */,
+				DC545DC31A89F0F10051A575 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC545DC31A89F0F10051A575 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC545DC21A89F0F10051A575 /* Heimdall.framework */,
+				DC545DCD1A89F0F10051A575 /* HeimdallTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC545DC41A89F0F10051A575 /* Heimdall */ = {
+			isa = PBXGroup;
+			children = (
+				22BC446B1A8B858D00AB0A14 /* AccessTokenStorage.swift */,
+				22BC44601A8A3FBA00AB0A14 /* AccessTokenKeychainStorage.swift */,
+				DC545DC71A89F0F10051A575 /* Heimdall.h */,
+				DC545DEA1A89FFDA0051A575 /* Heimdall.swift */,
+				DCA5B98C1A8A12E700667D32 /* NSDateExtensions.swift */,
+				DC545DC51A89F0F10051A575 /* Supporting Files */,
+			);
+			path = Heimdall;
+			sourceTree = "<group>";
+		};
+		DC545DC51A89F0F10051A575 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC545DC61A89F0F10051A575 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC545DD11A89F0F10051A575 /* HeimdallTests */ = {
+			isa = PBXGroup;
+			children = (
+				22BC44621A8A402300AB0A14 /* AccessTokenKeychainStorageSpec.swift */,
+				DCA5B9901A8A2B9700667D32 /* HeimdallSpec.swift */,
+				DCA5B98E1A8A296300667D32 /* NSDateExtensionsSpec.swift */,
+				DCD72CAD1A8B9ED90024BAC1 /* Extensions */,
+				DCA5B9A31A8A4C0500667D32 /* Stub Responses */,
+				DC545DD21A89F0F10051A575 /* Supporting Files */,
+			);
+			path = HeimdallTests;
+			sourceTree = "<group>";
+		};
+		DC545DD21A89F0F10051A575 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC545DD31A89F0F10051A575 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCA5B9A31A8A4C0500667D32 /* Stub Responses */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5B9971A8A385B00667D32 /* authorize-invalid-token.json */,
+				DCA5B9981A8A385B00667D32 /* authorize-invalid-type.json */,
+				DCA5B9991A8A385B00667D32 /* authorize-invalid.json */,
+				DCA5B9941A8A317900667D32 /* authorize-valid.json */,
+				DCA5B99D1A8A455700667D32 /* request-invalid-norefresh.json */,
+				DCA5B9A11A8A4A8C00667D32 /* request-invalid.json */,
+				DCA5B99E1A8A455700667D32 /* request-valid.json */,
+			);
+			name = "Stub Responses";
+			sourceTree = "<group>";
+		};
+		DCD72CAD1A8B9ED90024BAC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5B9A41A8A565C00667D32 /* StubResponseExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DC545DBF1A89F0F10051A575 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC545DC81A89F0F10051A575 /* Heimdall.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DC545DC11A89F0F10051A575 /* Heimdall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC545DD81A89F0F10051A575 /* Build configuration list for PBXNativeTarget "Heimdall" */;
+			buildPhases = (
+				DC545DBD1A89F0F10051A575 /* Sources */,
+				DC545DBE1A89F0F10051A575 /* Frameworks */,
+				DC545DBF1A89F0F10051A575 /* Headers */,
+				DC545DC01A89F0F10051A575 /* Resources */,
+				DC545DE01A89F4CB0051A575 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Heimdall;
+			productName = "oauth-swift";
+			productReference = DC545DC21A89F0F10051A575 /* Heimdall.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DC545DCC1A89F0F10051A575 /* HeimdallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC545DDB1A89F0F10051A575 /* Build configuration list for PBXNativeTarget "HeimdallTests" */;
+			buildPhases = (
+				DC545DC91A89F0F10051A575 /* Sources */,
+				DC545DCA1A89F0F10051A575 /* Frameworks */,
+				DC545DCB1A89F0F10051A575 /* Resources */,
+				DC545DE31A89F97D0051A575 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC545DD01A89F0F10051A575 /* PBXTargetDependency */,
+			);
+			name = HeimdallTests;
+			productName = "oauth-swiftTests";
+			productReference = DC545DCD1A89F0F10051A575 /* HeimdallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC545DB91A89F0F10051A575 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "B264 GmbH";
+				TargetAttributes = {
+					DC545DC11A89F0F10051A575 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DC545DCC1A89F0F10051A575 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = DC545DBC1A89F0F10051A575 /* Build configuration list for PBXProject "Heimdall" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC545DB81A89F0F10051A575;
+			productRefGroup = DC545DC31A89F0F10051A575 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC545DC11A89F0F10051A575 /* Heimdall */,
+				DC545DCC1A89F0F10051A575 /* HeimdallTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC545DC01A89F0F10051A575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC545DCB1A89F0F10051A575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA5B9951A8A317900667D32 /* authorize-valid.json in Resources */,
+				DCA5B99F1A8A455700667D32 /* request-invalid-norefresh.json in Resources */,
+				DCA5B99C1A8A385B00667D32 /* authorize-invalid.json in Resources */,
+				DCA5B99B1A8A385B00667D32 /* authorize-invalid-type.json in Resources */,
+				DCA5B9A01A8A455700667D32 /* request-valid.json in Resources */,
+				DCA5B9A21A8A4A8C00667D32 /* request-invalid.json in Resources */,
+				DCA5B99A1A8A385B00667D32 /* authorize-invalid-token.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC545DE01A89F4CB0051A575 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		DC545DE31A89F97D0051A575 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AeroGearHttpStub.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC545DBD1A89F0F10051A575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22BC44611A8A3FBA00AB0A14 /* AccessTokenKeychainStorage.swift in Sources */,
+				DC545DEB1A89FFDA0051A575 /* Heimdall.swift in Sources */,
+				DCA5B98D1A8A12E700667D32 /* NSDateExtensions.swift in Sources */,
+				22BC446C1A8B858D00AB0A14 /* AccessTokenStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC545DC91A89F0F10051A575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA5B9A51A8A565C00667D32 /* StubResponseExtensions.swift in Sources */,
+				22BC44631A8A402300AB0A14 /* AccessTokenKeychainStorageSpec.swift in Sources */,
+				DCA5B9911A8A2B9700667D32 /* HeimdallSpec.swift in Sources */,
+				DCA5B98F1A8A296300667D32 /* NSDateExtensionsSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC545DD01A89F0F10051A575 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC545DC11A89F0F10051A575 /* Heimdall */;
+			targetProxy = DC545DCF1A89F0F10051A575 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DC545DD61A89F0F10051A575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DC545DD71A89F0F10051A575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DC545DD91A89F0F10051A575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Heimdall/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC545DDA1A89F0F10051A575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Heimdall/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DC545DDC1A89F0F10051A575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeimdallTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC545DDD1A89F0F10051A575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HeimdallTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC545DBC1A89F0F10051A575 /* Build configuration list for PBXProject "Heimdall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC545DD61A89F0F10051A575 /* Debug */,
+				DC545DD71A89F0F10051A575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC545DD81A89F0F10051A575 /* Build configuration list for PBXNativeTarget "Heimdall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC545DD91A89F0F10051A575 /* Debug */,
+				DC545DDA1A89F0F10051A575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC545DDB1A89F0F10051A575 /* Build configuration list for PBXNativeTarget "HeimdallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC545DDC1A89F0F10051A575 /* Debug */,
+				DC545DDD1A89F0F10051A575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC545DB91A89F0F10051A575 /* Project object */;
+}
