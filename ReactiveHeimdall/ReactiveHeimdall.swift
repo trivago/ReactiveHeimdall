@@ -14,7 +14,7 @@ extension Heimdall {
     
     public func requestAccessToken(username: String, password: String) -> RACSignal {
         return RACSignal.createSignal { subscriber in
-            self.authorize(username, password: password) { result in
+            self.requestAccessToken(username, password: password) { result in
                 switch result {
                 case .Success:
                     subscriber.sendCompleted()
@@ -28,7 +28,7 @@ extension Heimdall {
     
     public func authenticateRequest(request: NSURLRequest) -> RACSignal {
         return RACSignal.createSignal { subscriber in
-            self.requestByAddingAuthorizationToRequest(request) { result in
+            self.authenticateRequest(request) { result in
                 switch result {
                 case .Success(let value):
                     subscriber.sendNext(value.unbox)
