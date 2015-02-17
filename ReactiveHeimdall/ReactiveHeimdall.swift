@@ -6,7 +6,7 @@ extension Heimdall {
     
     public func requestAccessToken(username: String, password: String) -> RACSignal {
         return RACSignal.createSignal { subscriber in
-            self.requestAccessToken(username, password: password) { result in
+            self.requestAccessToken(username: username, password: password) { result in
                 switch result {
                 case .Success:
                     subscriber.sendCompleted()

@@ -13,7 +13,7 @@ class MockHeimdall: Heimdall {
     var authorizeSuccess = true
     var requestSuccess = true
     
-    override func requestAccessToken(username: String, password: String, completion: Result<Void, NSError> -> ()) {
+    override func requestAccessToken(#username: String, password: String, completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
             completion(success())
         } else {
