@@ -21,6 +21,9 @@ let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http:
 signal.subscribeNext { value in
     let request = value as? NSURLRequest // request is the authenticated `NSURLRequest`
 }
+signal.subscribeError { error in
+    // request could not be authorized
+}
 ```
 
 ## About
