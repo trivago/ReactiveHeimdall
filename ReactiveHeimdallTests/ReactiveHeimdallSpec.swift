@@ -21,7 +21,7 @@ class MockHeimdall: Heimdall {
     var authorizeSuccess = true
     var requestSuccess = true
     
-    override func authorize(username: String, password: String, completion: Result<Void, NSError> -> ()) {
+    override func requestAccessToken(username: String, password: String, completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
             completion(success())
         } else {
@@ -29,7 +29,7 @@ class MockHeimdall: Heimdall {
         }
     }
     
-    override func requestByAddingAuthorizationToRequest(request: NSURLRequest, completion: Result<NSURLRequest, NSError> -> ()) {
+    override func authenticateRequest(request: NSURLRequest, completion: Result<NSURLRequest, NSError> -> ()) {
         if requestSuccess {
             completion(success(testRequest))
         } else {
@@ -48,7 +48,7 @@ class ReactiveHeimdallSpec: QuickSpec {
             heimdall = MockHeimdall(tokenURL: NSURL(string: "http://rheinfabrik.de/token")!)
         }
         
-        describe("-authorize") {
+        describe("-requestAccessToken") {
             
             context("when the completion block sends a success result") {
                 
@@ -58,7 +58,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("completes") {
                     waitUntil { done in
-                        let signal = heimdall.authorize("foo", password: "bar")
+                        let signal = heimdall.requestAccessToken("foo", password: "bar")
                         signal.subscribeCompleted {
                             done()
                         }
@@ -75,7 +75,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the error") {
                     waitUntil { done in
-                        let signal = heimdall.authorize("foo", password: "bar")
+                        let signal = heimdall.requestAccessToken("foo", password: "bar")
                         signal.subscribeError { error in
                             expect(error).to(equal(testError))
                             done()
@@ -87,7 +87,7 @@ class ReactiveHeimdallSpec: QuickSpec {
             
         }
         
-        describe ("-requestByAddingAuthorizationToRequest") {
+        describe ("-authenticateRequest") {
             
             context("when the completion block sends a success result") {
                 
@@ -97,7 +97,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the result value") {
                     waitUntil { done in
-                        let signal = heimdall.requestByAddingAuthorizationToRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
                         signal.subscribeNext { value in
                             expect(value as? NSURLRequest).to(equal(testRequest))
                             done()
@@ -107,7 +107,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("completes") {
                     waitUntil { done in
-                        let signal = heimdall.requestByAddingAuthorizationToRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
                         signal.subscribeCompleted {
                             done()
                         }
@@ -124,7 +124,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the error") {
                     waitUntil { done in
-                        let signal = heimdall.requestByAddingAuthorizationToRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
                         signal.subscribeError { error in
                             expect(error).to(equal(testError))
                             done()

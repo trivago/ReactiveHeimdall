@@ -12,7 +12,7 @@ import ReactiveCocoa
 
 extension Heimdall {
     
-    public func authorize(username: String, password: String) -> RACSignal {
+    public func requestAccessToken(username: String, password: String) -> RACSignal {
         return RACSignal.createSignal { subscriber in
             self.authorize(username, password: password) { result in
                 switch result {
@@ -26,7 +26,7 @@ extension Heimdall {
         }
     }
     
-    public func requestByAddingAuthorizationToRequest(request: NSURLRequest) -> RACSignal {
+    public func authenticateRequest(request: NSURLRequest) -> RACSignal {
         return RACSignal.createSignal { subscriber in
             self.requestByAddingAuthorizationToRequest(request) { result in
                 switch result {
