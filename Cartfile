@@ -1,2 +1,2 @@
-git "../Heimdall.swift" "master"
+github "Rheinfabrik/Heimdall.swift" ~> 1.0
 github "ReactiveCocoa/ReactiveCocoa" ~> 2.4
