@@ -16,10 +16,6 @@
 		226D4D701A8CAADD00191B2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D6E1A8CAADD00191B2A /* Quick.framework */; };
 		226D4D721A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */; };
 		227ADD3D1A93959E00F3831E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 227ADD3C1A93959E00F3831E /* LICENSE */; };
-		DC336D6A1A93ABE4002AE918 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D761A8CADBA00191B2A /* KeychainAccess.framework */; };
-		DC336D6B1A93ABE4002AE918 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D731A8CABAE00191B2A /* LlamaKit.framework */; };
-		DC336D6E1A93ABE5002AE918 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC336D6C1A93ABE5002AE918 /* Argo.framework */; };
-		DC336D6F1A93ABE5002AE918 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC336D6D1A93ABE5002AE918 /* Runes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +40,7 @@
 		226D4D6D1A8CAADD00191B2A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		226D4D6E1A8CAADD00191B2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHeimdallSpec.swift; sourceTree = "<group>"; };
-		226D4D731A8CABAE00191B2A /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
-		226D4D761A8CADBA00191B2A /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		227ADD3C1A93959E00F3831E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		DC336D6C1A93ABE5002AE918 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
-		DC336D6D1A93ABE5002AE918 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC336D6B1A93ABE4002AE918 /* LlamaKit.framework in Frameworks */,
-				DC336D6F1A93ABE5002AE918 /* Runes.framework in Frameworks */,
-				DC336D6E1A93ABE5002AE918 /* Argo.framework in Frameworks */,
-				DC336D6A1A93ABE4002AE918 /* KeychainAccess.framework in Frameworks */,
 				226D4D5F1A8C9F3600191B2A /* Heimdall.framework in Frameworks */,
 				226D4D641A8CA50100191B2A /* ReactiveCocoa.framework in Frameworks */,
 			);
@@ -137,10 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				DC336D741A93AC9E002AE918 /* Private */,
-				226D4D731A8CABAE00191B2A /* LlamaKit.framework */,
-				DC336D6D1A93ABE5002AE918 /* Runes.framework */,
-				DC336D6C1A93ABE5002AE918 /* Argo.framework */,
-				226D4D761A8CADBA00191B2A /* KeychainAccess.framework */,
 				226D4D5E1A8C9F3600191B2A /* Heimdall.framework */,
 				226D4D631A8CA50100191B2A /* ReactiveCocoa.framework */,
 			);
