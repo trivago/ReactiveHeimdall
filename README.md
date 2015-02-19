@@ -2,6 +2,8 @@
 
 ReactiveHeimdall is a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)-based extension to [Heimdall.swift](https://github.com/rheinfabrik/Heimdall.swift).
 
+[![Build Status](https://travis-ci.org/rheinfabrik/ReactiveHeimdall.svg)](https://travis-ci.org/rheinfabrik/ReactiveHeimdall)
+
 ## Usage
 
 When requesting an access token the signal completes on success
