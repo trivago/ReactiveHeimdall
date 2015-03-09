@@ -9,13 +9,15 @@ extension Heimdall {
     /// :param: username The resource owner's username.
     /// :param: password The resource owner's password.
     ///
-    /// :returns: A signal that completes when the requests finishes successfully
-    ///     or sends an error of the requests finishes with an error.
+    /// :returns: A signal that sends a `RACUnit` and completes when the
+    ///     request finishes successfully or sends an error of the request
+    ///     finishes with an error.
     public func requestAccessToken(username: String, password: String) -> RACSignal {
         return RACSignal.createSignal { subscriber in
             self.requestAccessToken(username: username, password: password) { result in
                 switch result {
                 case .Success:
+                    subscriber.sendNext(RACUnit())
                     subscriber.sendCompleted()
                 case .Failure(let error):
                     subscriber.sendError(error.unbox)

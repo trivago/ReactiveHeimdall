@@ -2,8 +2,9 @@ import Foundation
 import Heimdall
 import LlamaKit
 import Nimble
-import ReactiveHeimdall
 import Quick
+import ReactiveCocoa
+import ReactiveHeimdall
 
 let testError = NSError(domain: "MockHeimdall", code: 123, userInfo: ["foo": "bar"])
 let testRequest = NSURLRequest(URL: NSURL(string: "http://rheinfabrik.de/members")!)
@@ -46,6 +47,16 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 beforeEach {
                     heimdall.authorizeSuccess = true
+                }
+                
+                it("sends a RACUnit") {
+                    waitUntil { done in
+                        let signal = heimdall.requestAccessToken("foo", password: "bar")
+                        signal.subscribeNext { value in
+                            expect(value is RACUnit).to(beTrue())
+                            done()
+                        }
+                    }
                 }
                 
                 it("completes") {
