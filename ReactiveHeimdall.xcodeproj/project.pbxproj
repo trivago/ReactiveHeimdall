@@ -28,6 +28,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CAD7A5921B03349B00D25D4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CAD7A5961B0334CF00D25D4A /* Result.framework in CopyFiles */,
+				CAD7A5951B0334BD00D25D4A /* Box.framework in CopyFiles */,
+				CAD7A5931B0334A600D25D4A /* Quick.framework in CopyFiles */,
+				CAD7A5941B0334A600D25D4A /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		226D4D421A8C96B000191B2A /* ReactiveHeimdall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveHeimdall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D4D461A8C96B000191B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +196,7 @@
 				226D4D4A1A8C96B000191B2A /* Frameworks */,
 				226D4D4B1A8C96B000191B2A /* Resources */,
 				226D4D651A8CAA4500191B2A /* ShellScript */,
+				CAD7A5921B03349B00D25D4A /* CopyFiles */,
 			);
 			buildRules = (
 			);
