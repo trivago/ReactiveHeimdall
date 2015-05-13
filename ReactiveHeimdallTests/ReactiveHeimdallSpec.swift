@@ -22,6 +22,14 @@ class MockHeimdall: Heimdall {
         }
     }
     
+    override func requestAccessToken(#grantType: String, parameters: [String : String], completion: LlamaKit.Result<Void, NSError> -> ()) {
+        if authorizeSuccess {
+            completion(success())
+        } else {
+            completion(failure(testError))
+        }
+    }
+    
     override func authenticateRequest(request: NSURLRequest, completion: Result<NSURLRequest, NSError> -> ()) {
         if requestSuccess {
             completion(success(testRequest))
@@ -89,7 +97,56 @@ class ReactiveHeimdallSpec: QuickSpec {
             }
             
         }
-        
+
+        describe("-requestAccessToken(grantType:parameters:)") {
+            
+            context("when the completion block sends a success result") {
+                
+                beforeEach {
+                    heimdall.authorizeSuccess = true
+                }
+                
+                it("sends a RACUnit") {
+                    waitUntil { done in
+                        let signalProducer = heimdall.requestAccessToken(grantType:"foo", parameters:["code": "bar"])
+                        signalProducer.start(next: { value in
+                            expect(value).to(beAKindOf(RACUnit))
+                            done()
+                        })
+                    }
+                }
+                
+                it("completes") {
+                    waitUntil { done in
+                        let signalProducer = heimdall.requestAccessToken(grantType:"foo", parameters:["code": "bar"])
+                        signalProducer.start(completed: {
+                            done()
+                        })
+                    }
+                }
+                
+            }
+            
+            context("when the completion block sends a failure result") {
+                
+                beforeEach {
+                    heimdall.authorizeSuccess = false
+                }
+                
+                it("sends the error") {
+                    waitUntil { done in
+                        let signalProducer = heimdall.requestAccessToken(grantType:"foo", parameters:["code": "bar"])
+                        signalProducer.start( error: { error in
+                            expect(error).to(equal(testError))
+                            done()
+                        })
+                    }
+                }
+                
+            }
+            
+        }
+
         describe ("-authenticateRequest") {
             
             context("when the completion block sends a success result") {
@@ -177,6 +234,55 @@ class ReactiveHeimdallSpec: QuickSpec {
                 it("sends the error") {
                     waitUntil { done in
                         let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        signal.subscribeError { error in
+                            expect(error).to(equal(testError))
+                            done()
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+
+        describe("-RH_requestAccessToken(grantType:parameters:)") {
+            
+            context("when the completion block sends a success result") {
+                
+                beforeEach {
+                    heimdall.authorizeSuccess = true
+                }
+                
+                it("sends a RACUnit") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_requestAccessToken(grantType:"foo", parameters:["code": "bar"])
+                        signal.subscribeNext { value in
+                            expect(value is RACUnit).to(beTrue())
+                            done()
+                        }
+                    }
+                }
+                
+                it("completes") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_requestAccessToken(grantType:"foo", parameters:["code": "bar"])
+                        signal.subscribeCompleted {
+                            done()
+                        }
+                    }
+                }
+                
+            }
+            
+            context("when the completion block sends a failure result") {
+                
+                beforeEach {
+                    heimdall.authorizeSuccess = false
+                }
+                
+                it("sends the error") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_requestAccessToken(grantType:"foo", parameters:["code": "bar"])
                         signal.subscribeError { error in
                             expect(error).to(equal(testError))
                             done()

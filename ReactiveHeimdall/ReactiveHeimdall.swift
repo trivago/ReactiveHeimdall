@@ -26,6 +26,28 @@ extension Heimdall {
         }
     }
     
+    /// Requests an access token with the given grant type.
+    ///
+    /// :param: grantType The name of the grant type
+    /// :param: parameters The required parameters for the custom grant type
+    ///
+    /// :returns: A signal that sends a `RACUnit` and completes when the
+    ///     request finishes successfully or sends an error if the request
+    ///     finishes with an error.
+    public func requestAccessToken(#grantType: String, parameters: NSDictionary) -> SignalProducer<RACUnit, NSError> {
+        return SignalProducer() { sink, disposable in
+            self.requestAccessToken(grantType: grantType, parameters:parameters as! [String: String]) { result in
+                switch result {
+                case .Success:
+                    sendNext(sink, RACUnit())
+                    sendCompleted(sink)
+                case .Failure(let error):
+                    sendError(sink, error.unbox)
+                }
+            }
+        }
+    }
+    
     /// Alters the given request by adding authentication, if possible.
     ///
     /// In case of an expired access token and the presence of a refresh token,
@@ -65,6 +87,19 @@ extension Heimdall {
     @objc
     public func RH_requestAccessToken(username: String, password: String) -> RACSignal {
         return toRACSignal(requestAccessToken(username, password: password))
+    }
+    
+    /// Requests an access token with the given grant type.
+    ///
+    /// :param: grantType The name of the grant type
+    /// :param: parameters The required parameters for the custom grant type
+    ///
+    /// :returns: A signal that sends a `RACUnit` and completes when the
+    ///     request finishes successfully or sends an error if the request
+    ///     finishes with an error.
+    @objc
+    public func RH_requestAccessToken(#grantType: String, parameters: NSDictionary) -> RACSignal {
+        return toRACSignal(requestAccessToken(grantType: grantType, parameters:parameters))
     }
 
     /// Alters the given request by adding authentication, if possible.
