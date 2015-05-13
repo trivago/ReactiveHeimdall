@@ -53,7 +53,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                     waitUntil { done in
                         let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
                         signalProducer.start(next: { value in
-                            expect(value).to(equal(RACUnit()))
+                            expect(value).to(beAKindOf(RACUnit))
                             done()
                         })
                     }
