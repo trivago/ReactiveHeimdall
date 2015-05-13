@@ -12,7 +12,7 @@ extension Heimdall {
     /// :returns: A SignalProducer that sends a `RACUnit` and completes when the
     ///     request finishes successfully or sends an error of the request
     ///     finishes with an error.
-    public func requestAccessToken(username: String, password: String) -> SignalProducer<RACUnit, NSError> {
+    public func requestAccessToken(#username: String, password: String) -> SignalProducer<RACUnit, NSError> {
         return SignalProducer() { sink, disposable in
             self.requestAccessToken(username: username, password: password) { result in
                 switch result {
@@ -85,8 +85,8 @@ extension Heimdall {
     ///     request finishes successfully or sends an error of the request
     ///     finishes with an error.
     @objc
-    public func RH_requestAccessToken(username: String, password: String) -> RACSignal {
-        return toRACSignal(requestAccessToken(username, password: password))
+    public func RH_requestAccessToken(#username: String, password: String) -> RACSignal {
+        return toRACSignal(requestAccessToken(username: username, password: password))
     }
     
     /// Requests an access token with the given grant type.

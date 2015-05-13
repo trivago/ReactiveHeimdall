@@ -59,7 +59,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends a RACUnit") {
                     waitUntil { done in
-                        let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
+                        let signalProducer = heimdall.requestAccessToken(username: "foo", password: "bar")
                         signalProducer.start(next: { value in
                             expect(value).to(beAKindOf(RACUnit))
                             done()
@@ -69,7 +69,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("completes") {
                     waitUntil { done in
-                        let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
+                        let signalProducer = heimdall.requestAccessToken(username: "foo", password: "bar")
                         signalProducer.start(completed: {
                             done()
                         })
@@ -86,7 +86,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the error") {
                     waitUntil { done in
-                        let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
+                        let signalProducer = heimdall.requestAccessToken(username: "foo", password: "bar")
                         signalProducer.start( error: { error in
                             expect(error).to(equal(testError))
                             done()
@@ -206,7 +206,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends a RACUnit") {
                     waitUntil { done in
-                        let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        let signal = heimdall.RH_requestAccessToken(username: "foo", password: "bar")
                         signal.subscribeNext { value in
                             expect(value is RACUnit).to(beTrue())
                             done()
@@ -216,7 +216,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("completes") {
                     waitUntil { done in
-                        let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        let signal = heimdall.RH_requestAccessToken(username: "foo", password: "bar")
                         signal.subscribeCompleted {
                             done()
                         }
@@ -233,7 +233,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the error") {
                     waitUntil { done in
-                        let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        let signal = heimdall.RH_requestAccessToken(username: "foo", password: "bar")
                         signal.subscribeError { error in
                             expect(error).to(equal(testError))
                             done()
