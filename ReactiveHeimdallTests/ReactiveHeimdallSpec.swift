@@ -40,8 +40,8 @@ class ReactiveHeimdallSpec: QuickSpec {
         beforeEach {
             heimdall = MockHeimdall(tokenURL: NSURL(string: "http://rheinfabrik.de/token")!)
         }
-        
-        describe("-requestAccessToken") {
+
+        describe("-requestAccessToken(username:password:)") {
             
             context("when the completion block sends a success result") {
                 
@@ -51,20 +51,20 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends a RACUnit") {
                     waitUntil { done in
-                        let signal = heimdall.requestAccessToken("foo", password: "bar")
-                        signal.subscribeNext { value in
-                            expect(value is RACUnit).to(beTrue())
+                        let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
+                        signalProducer.start(next: { value in
+                            expect(value).to(equal(RACUnit()))
                             done()
-                        }
+                        })
                     }
                 }
                 
                 it("completes") {
                     waitUntil { done in
-                        let signal = heimdall.requestAccessToken("foo", password: "bar")
-                        signal.subscribeCompleted {
+                        let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
+                        signalProducer.start(completed: {
                             done()
-                        }
+                        })
                     }
                 }
                 
@@ -78,11 +78,11 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the error") {
                     waitUntil { done in
-                        let signal = heimdall.requestAccessToken("foo", password: "bar")
-                        signal.subscribeError { error in
+                        let signalProducer = heimdall.requestAccessToken("foo", password: "bar")
+                        signalProducer.start( error: { error in
                             expect(error).to(equal(testError))
                             done()
-                        }
+                        })
                     }
                 }
                 
@@ -100,7 +100,105 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the result value") {
                     waitUntil { done in
-                        let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        let signalProducer = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        signalProducer.start(next: { value in
+                            expect(value).to(equal(testRequest))
+                            done()
+                        })
+                    }
+                }
+                
+                it("completes") {
+                    waitUntil { done in
+                        let signalProducer = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        signalProducer.start(completed: {
+                            done()
+                        })
+                    }
+                }
+                
+            }
+            
+            context("when the completion block sends a failure result") {
+                
+                beforeEach {
+                    heimdall.requestSuccess = false
+                }
+                
+                it("sends the error") {
+                    waitUntil { done in
+                        let signalProducer = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        signalProducer.start(error: { error in
+                            expect(error).to(equal(testError))
+                            done()
+                        })
+                    }
+                }
+                
+            }
+            
+        }
+        
+        describe("-RH_requestAccessToken(username:password:)") {
+            
+            context("when the completion block sends a success result") {
+                
+                beforeEach {
+                    heimdall.authorizeSuccess = true
+                }
+                
+                it("sends a RACUnit") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        signal.subscribeNext { value in
+                            expect(value is RACUnit).to(beTrue())
+                            done()
+                        }
+                    }
+                }
+                
+                it("completes") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        signal.subscribeCompleted {
+                            done()
+                        }
+                    }
+                }
+                
+            }
+            
+            context("when the completion block sends a failure result") {
+                
+                beforeEach {
+                    heimdall.authorizeSuccess = false
+                }
+                
+                it("sends the error") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_requestAccessToken("foo", password: "bar")
+                        signal.subscribeError { error in
+                            expect(error).to(equal(testError))
+                            done()
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+        
+        describe ("-RH_authenticateRequest") {
+            
+            context("when the completion block sends a success result") {
+                
+                beforeEach {
+                    heimdall.requestSuccess = true
+                }
+                
+                it("sends the result value") {
+                    waitUntil { done in
+                        let signal = heimdall.RH_authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
                         signal.subscribeNext { value in
                             expect(value as? NSURLRequest).to(equal(testRequest))
                             done()
@@ -110,7 +208,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("completes") {
                     waitUntil { done in
-                        let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        let signal = heimdall.RH_authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
                         signal.subscribeCompleted {
                             done()
                         }
@@ -127,7 +225,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                 
                 it("sends the error") {
                     waitUntil { done in
-                        let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+                        let signal = heimdall.RH_authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
                         signal.subscribeError { error in
                             expect(error).to(equal(testError))
                             done()

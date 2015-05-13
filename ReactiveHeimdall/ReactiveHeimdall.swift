@@ -9,22 +9,20 @@ extension Heimdall {
     /// :param: username The resource owner's username.
     /// :param: password The resource owner's password.
     ///
-    /// :returns: A signal that sends a `RACUnit` and completes when the
+    /// :returns: A SignalProducer that sends a `RACUnit` and completes when the
     ///     request finishes successfully or sends an error of the request
     ///     finishes with an error.
-    @objc
-    public func requestAccessToken(username: String, password: String) -> RACSignal {
-        return RACSignal.createSignal { subscriber in
+    public func requestAccessToken(username: String, password: String) -> SignalProducer<RACUnit, NSError> {
+        return SignalProducer() { sink, disposable in
             self.requestAccessToken(username: username, password: password) { result in
                 switch result {
                 case .Success:
-                    subscriber.sendNext(RACUnit())
-                    subscriber.sendCompleted()
+                    sendNext(sink, RACUnit())
+                    sendCompleted(sink)
                 case .Failure(let error):
-                    subscriber.sendError(error.unbox)
+                    sendError(sink, error.unbox)
                 }
             }
-            return nil
         }
     }
     
@@ -38,22 +36,52 @@ extension Heimdall {
     ///
     /// :param: request An unauthenticated NSURLRequest.
     ///
-    /// :returns: A signal that sends the authenticated request on success or
+    /// :returns: A SignalProducer that sends the authenticated request on success or
     ///     an error when the request could not be authenticated.
-    @objc
-    public func authenticateRequest(request: NSURLRequest) -> RACSignal {
-        return RACSignal.createSignal { subscriber in
+    public func authenticateRequest(request: NSURLRequest) -> SignalProducer<NSURLRequest, NSError> {
+        return SignalProducer { sink, disposable in
             self.authenticateRequest(request) { result in
                 switch result {
                 case .Success(let value):
-                    subscriber.sendNext(value.unbox)
-                    subscriber.sendCompleted()
+                    sendNext(sink, value.unbox)
+                    sendCompleted(sink)
                 case .Failure(let error):
-                    subscriber.sendError(error.unbox)
+                    sendError(sink, error.unbox)
                 }
             }
-            return nil
         }
     }
     
+    // MARK: Objective-C compatibility
+
+    /// Requests an access token with the resource owner's password credentials.
+    ///
+    /// :param: username The resource owner's username.
+    /// :param: password The resource owner's password.
+    ///
+    /// :returns: A signal that sends a `RACUnit` and completes when the
+    ///     request finishes successfully or sends an error of the request
+    ///     finishes with an error.
+    @objc
+    public func RH_requestAccessToken(username: String, password: String) -> RACSignal {
+        return toRACSignal(requestAccessToken(username, password: password))
+    }
+
+    /// Alters the given request by adding authentication, if possible.
+    ///
+    /// In case of an expired access token and the presence of a refresh token,
+    /// automatically tries to refresh the access token.
+    ///
+    /// **Note:** If the access token must be refreshed, network I/O is
+    ///     performed.
+    ///
+    /// :param: request An unauthenticated NSURLRequest.
+    ///
+    /// :returns: A SignalProducer that sends the authenticated request on success or
+    ///     an error when the request could not be authenticated.
+    @objc
+    public func RH_authenticateRequest(request: NSURLRequest) -> RACSignal {
+        return toRACSignal(authenticateRequest(request))
+    }
+
 }
