@@ -1,10 +1,10 @@
 import Foundation
 import Heimdall
-import LlamaKit
 import Nimble
 import Quick
 import ReactiveCocoa
 import ReactiveHeimdall
+import Result
 
 let testError = NSError(domain: "MockHeimdall", code: 123, userInfo: ["foo": "bar"])
 let testRequest = NSURLRequest(URL: NSURL(string: "http://rheinfabrik.de/members")!)
@@ -16,25 +16,25 @@ class MockHeimdall: Heimdall {
     
     override func requestAccessToken(#username: String, password: String, completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
-            completion(success())
+            completion(Result(value: Void()))
         } else {
-            completion(failure(testError))
+            completion(Result(error: testError))
         }
     }
     
-    override func requestAccessToken(#grantType: String, parameters: [String : String], completion: LlamaKit.Result<Void, NSError> -> ()) {
+    override func requestAccessToken(#grantType: String, parameters: [String : String], completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
-            completion(success())
+            completion(Result(value: Void()))
         } else {
-            completion(failure(testError))
+            completion(Result(error: testError))
         }
     }
     
     override func authenticateRequest(request: NSURLRequest, completion: Result<NSURLRequest, NSError> -> ()) {
         if requestSuccess {
-            completion(success(testRequest))
+            completion(Result(value: testRequest))
         } else {
-            completion(failure(testError))
+            completion(Result(error: testError))
         }
     }
     
@@ -57,11 +57,10 @@ class ReactiveHeimdallSpec: QuickSpec {
                     heimdall.authorizeSuccess = true
                 }
                 
-                it("sends a RACUnit") {
+                it("sends Void") {
                     waitUntil { done in
                         let signalProducer = heimdall.requestAccessToken(username: "foo", password: "bar")
                         signalProducer.start(next: { value in
-                            expect(value).to(beAKindOf(RACUnit))
                             done()
                         })
                     }
@@ -110,7 +109,6 @@ class ReactiveHeimdallSpec: QuickSpec {
                     waitUntil { done in
                         let signalProducer = heimdall.requestAccessToken(grantType:"foo", parameters:["code": "bar"])
                         signalProducer.start(next: { value in
-                            expect(value).to(beAKindOf(RACUnit))
                             done()
                         })
                     }
