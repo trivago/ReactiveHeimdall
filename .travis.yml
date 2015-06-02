@@ -1,8 +1,0 @@
-language: objective-c
-osx_image: beta-xcode6.3
-before_install: 
-- brew update
-- brew install carthage
-- gem install xcpretty
-script:
-- scripts/cibuild

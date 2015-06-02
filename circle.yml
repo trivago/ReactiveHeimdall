@@ -1,0 +1,14 @@
+machine:
+  xcode:
+    version: "6.3.1"
+dependencies:
+  pre:
+    - brew update
+    - brew install carthage
+    - sudo gem install xcpretty
+  cache_directories:
+    - "Pods"
+    - "Carthage"
+test:
+  override:
+    - scripts/cibuild
