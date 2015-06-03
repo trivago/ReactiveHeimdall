@@ -9,9 +9,10 @@ extension Heimdall {
     
         :param: username The resource owner's username.
         :param: password The resource owner's password.
-    
-        :returns: A SignalProducer that completes when the request finishes
-            successfully or sends an error of the request finishes with an error.
+
+        :returns: A `SignalProducer` that, when started, creates and sends a
+            signal that completes when the request finishes successfully or
+            sends an error of the request finishes with an error.
     */
     public func requestAccessToken(#username: String, password: String) -> SignalProducer<Void, NSError> {
         return SignalProducer { observer, disposable in
@@ -33,8 +34,9 @@ extension Heimdall {
         :param: grantType The name of the grant type
         :param: parameters The required parameters for the custom grant type
     
-        :returns: A signal that  completes when the request finishes
-            successfully or sends an error if the request finishes with an error.
+        :returns: A `SignalProducer` that, when started, creates and sends a
+            signal that completes when the request finishes successfully or
+            sends an error of the request finishes with an error.
     */
     public func requestAccessToken(#grantType: String, parameters: [ String : String ]) -> SignalProducer<Void, NSError> {
         return SignalProducer { observer, disposable in
@@ -61,8 +63,9 @@ extension Heimdall {
     
         :param: request An unauthenticated NSURLRequest.
     
-        :returns: A SignalProducer that sends the authenticated request on
-            success or an error when the request could not be authenticated.
+        :returns: A `SignalProducer` that, when started, creates and sends a
+            signal that sends the authenticated request on success or an error
+            when the request could not be authenticated.
     */
     public func authenticateRequest(request: NSURLRequest) -> SignalProducer<NSURLRequest, NSError> {
         return SignalProducer { observer, disposable in
@@ -125,7 +128,7 @@ extension Heimdall {
 
         :param: request An unauthenticated NSURLRequest.
 
-        :returns: A SignalProducer that sends the authenticated request on success or
+        :returns: A signal that sends the authenticated request on success or
             an error when the request could not be authenticated.
     */
     @objc
