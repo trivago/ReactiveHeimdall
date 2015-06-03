@@ -16,6 +16,16 @@
 		226D4D701A8CAADD00191B2A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D4D6E1A8CAADD00191B2A /* Quick.framework */; };
 		226D4D721A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */; };
 		227ADD3D1A93959E00F3831E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 227ADD3C1A93959E00F3831E /* LICENSE */; };
+		22C21AAA1B1DADE50043B260 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22C21AA81B1DADD20043B260 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22C21AAD1B1DAE240043B260 /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22C21AAB1B1DAE1B0043B260 /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22C21AAE1B1DAE420043B260 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C21AAB1B1DAE1B0043B260 /* Box.framework */; };
+		22C21AAF1B1DAE420043B260 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C21AA81B1DADD20043B260 /* Result.framework */; };
+		22C21AB31B1DAE420043B260 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C21AB01B1DAE420043B260 /* Argo.framework */; };
+		22C21AB41B1DAE420043B260 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C21AB11B1DAE420043B260 /* KeychainAccess.framework */; };
+		22C21AB51B1DAE420043B260 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C21AB21B1DAE420043B260 /* Runes.framework */; };
+		22C21AB61B1DAE4A0043B260 /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22C21AB01B1DAE420043B260 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22C21AB71B1DAE560043B260 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22C21AB11B1DAE420043B260 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22C21AB81B1DAE5F0043B260 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22C21AB21B1DAE420043B260 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +37,23 @@
 			remoteInfo = ReactiveHeimdall;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CAD7A5921B03349B00D25D4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22C21AAA1B1DADE50043B260 /* Result.framework in CopyFiles */,
+				22C21AAD1B1DAE240043B260 /* Box.framework in CopyFiles */,
+				22C21AB61B1DAE4A0043B260 /* Argo.framework in CopyFiles */,
+				22C21AB71B1DAE560043B260 /* KeychainAccess.framework in CopyFiles */,
+				22C21AB81B1DAE5F0043B260 /* Runes.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		226D4D421A8C96B000191B2A /* ReactiveHeimdall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveHeimdall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +68,11 @@
 		226D4D6E1A8CAADD00191B2A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		226D4D711A8CAB1C00191B2A /* ReactiveHeimdallSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHeimdallSpec.swift; sourceTree = "<group>"; };
 		227ADD3C1A93959E00F3831E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		22C21AA81B1DADD20043B260 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		22C21AAB1B1DAE1B0043B260 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
+		22C21AB01B1DAE420043B260 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
+		22C21AB11B1DAE420043B260 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		22C21AB21B1DAE420043B260 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C21AB31B1DAE420043B260 /* Argo.framework in Frameworks */,
+				22C21AB41B1DAE420043B260 /* KeychainAccess.framework in Frameworks */,
+				22C21AB51B1DAE420043B260 /* Runes.framework in Frameworks */,
+				22C21AAE1B1DAE420043B260 /* Box.framework in Frameworks */,
 				226D4D5F1A8C9F3600191B2A /* Heimdall.framework in Frameworks */,
 				226D4D641A8CA50100191B2A /* ReactiveCocoa.framework in Frameworks */,
+				22C21AAF1B1DAE420043B260 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,9 +161,14 @@
 		DC336D731A93AC93002AE918 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DC336D741A93AC9E002AE918 /* Private */,
+				22C21AB01B1DAE420043B260 /* Argo.framework */,
+				22C21AAB1B1DAE1B0043B260 /* Box.framework */,
 				226D4D5E1A8C9F3600191B2A /* Heimdall.framework */,
+				22C21AB11B1DAE420043B260 /* KeychainAccess.framework */,
+				DC336D741A93AC9E002AE918 /* Private */,
 				226D4D631A8CA50100191B2A /* ReactiveCocoa.framework */,
+				22C21AA81B1DADD20043B260 /* Result.framework */,
+				22C21AB21B1DAE420043B260 /* Runes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,6 +222,7 @@
 				226D4D4A1A8C96B000191B2A /* Frameworks */,
 				226D4D4B1A8C96B000191B2A /* Resources */,
 				226D4D651A8CAA4500191B2A /* ShellScript */,
+				CAD7A5921B03349B00D25D4A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -253,10 +296,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Heimdall.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 			);
