@@ -16,7 +16,7 @@ class MockHeimdall: Heimdall {
     
     override func requestAccessToken(#username: String, password: String, completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
-            completion(Result(value: Void()))
+            completion(Result(value: ()))
         } else {
             completion(Result(error: testError))
         }
@@ -24,7 +24,7 @@ class MockHeimdall: Heimdall {
     
     override func requestAccessToken(#grantType: String, parameters: [String : String], completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
-            completion(Result(value: Void()))
+            completion(Result(value: ()))
         } else {
             completion(Result(error: testError))
         }
@@ -105,7 +105,7 @@ class ReactiveHeimdallSpec: QuickSpec {
                     heimdall.authorizeSuccess = true
                 }
                 
-                it("sends a RACUnit") {
+                it("sends Void") {
                     waitUntil { done in
                         let signalProducer = heimdall.requestAccessToken(grantType:"foo", parameters:["code": "bar"])
                         signalProducer.start(next: { value in

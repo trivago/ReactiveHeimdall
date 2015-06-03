@@ -14,14 +14,14 @@ extension Heimdall {
             successfully or sends an error of the request finishes with an error.
     */
     public func requestAccessToken(#username: String, password: String) -> SignalProducer<Void, NSError> {
-        return SignalProducer() { sink, disposable in
+        return SignalProducer { observer, disposable in
             self.requestAccessToken(username: username, password: password) { result in
                 switch result {
                 case .Success:
-                    sendNext(sink, Void())
-                    sendCompleted(sink)
+                    sendNext(observer, ())
+                    sendCompleted(observer)
                 case .Failure(let error):
-                    sendError(sink, error.value)
+                    sendError(observer, error.value)
                 }
             }
         }
@@ -36,15 +36,15 @@ extension Heimdall {
         :returns: A signal that  completes when the request finishes
             successfully or sends an error if the request finishes with an error.
     */
-    public func requestAccessToken(#grantType: String, parameters: NSDictionary) -> SignalProducer<Void, NSError> {
-        return SignalProducer() { sink, disposable in
-            self.requestAccessToken(grantType: grantType, parameters:parameters as! [String: String]) { result in
+    public func requestAccessToken(#grantType: String, parameters: [ String : String ]) -> SignalProducer<Void, NSError> {
+        return SignalProducer { observer, disposable in
+            self.requestAccessToken(grantType: grantType, parameters: parameters) { result in
                 switch result {
                 case .Success:
-                    sendNext(sink, Void())
-                    sendCompleted(sink)
+                    sendNext(observer, ())
+                    sendCompleted(observer)
                 case .Failure(let error):
-                    sendError(sink, error.value)
+                    sendError(observer, error.value)
                 }
             }
         }
@@ -65,14 +65,14 @@ extension Heimdall {
             success or an error when the request could not be authenticated.
     */
     public func authenticateRequest(request: NSURLRequest) -> SignalProducer<NSURLRequest, NSError> {
-        return SignalProducer { sink, disposable in
+        return SignalProducer { observer, disposable in
             self.authenticateRequest(request) { result in
                 switch result {
                 case .Success(let value):
-                    sendNext(sink, value.value)
-                    sendCompleted(sink)
+                    sendNext(observer, value.value)
+                    sendCompleted(observer)
                 case .Failure(let error):
-                    sendError(sink, error.value)
+                    sendError(observer, error.value)
                 }
             }
         }
@@ -110,7 +110,7 @@ extension Heimdall {
     @objc
     public func RH_requestAccessToken(#grantType: String, parameters: NSDictionary) -> RACSignal {
         return toRACSignal(
-            requestAccessToken(grantType: grantType, parameters:parameters) |> map { _ in RACUnit.defaultUnit() }
+            requestAccessToken(grantType: grantType, parameters: parameters as! [ String : String ]) |> map { _ in RACUnit.defaultUnit() }
         )
     }
 
