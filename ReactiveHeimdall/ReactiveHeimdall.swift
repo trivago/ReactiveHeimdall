@@ -7,14 +7,14 @@ extension Heimdall {
     /**
         Requests an access token with the resource owner's password credentials.
     
-        :param: username The resource owner's username.
-        :param: password The resource owner's password.
+        - parameter username: The resource owner's username.
+        - parameter password: The resource owner's password.
 
-        :returns: A `SignalProducer` that, when started, creates a signal that
+        - returns: A `SignalProducer` that, when started, creates a signal that
             completes when the request finishes successfully or sends an error
             if the request finishes with an error.
     */
-    public func requestAccessToken(#username: String, password: String) -> SignalProducer<Void, NSError> {
+    public func requestAccessToken(username username: String, password: String) -> SignalProducer<Void, NSError> {
         return SignalProducer { observer, disposable in
             self.requestAccessToken(username: username, password: password) { result in
                 switch result {
@@ -22,7 +22,7 @@ extension Heimdall {
                     sendNext(observer, ())
                     sendCompleted(observer)
                 case .Failure(let error):
-                    sendError(observer, error.value)
+                    sendError(observer, error)
                 }
             }
         }
@@ -31,14 +31,14 @@ extension Heimdall {
     /**
         Requests an access token with the given grant type.
 
-        :param: grantType The name of the grant type
-        :param: parameters The required parameters for the custom grant type
+        - parameter grantType: The name of the grant type
+        - parameter parameters: The required parameters for the custom grant type
     
-        :returns: A `SignalProducer` that, when started, creates a signal that
+        - returns: A `SignalProducer` that, when started, creates a signal that
             completes when the request finishes successfully or sends an error
             if the request finishes with an error.
     */
-    public func requestAccessToken(#grantType: String, parameters: [ String : String ]) -> SignalProducer<Void, NSError> {
+    public func requestAccessToken(grantType grantType: String, parameters: [ String : String ]) -> SignalProducer<Void, NSError> {
         return SignalProducer { observer, disposable in
             self.requestAccessToken(grantType: grantType, parameters: parameters) { result in
                 switch result {
@@ -46,7 +46,7 @@ extension Heimdall {
                     sendNext(observer, ())
                     sendCompleted(observer)
                 case .Failure(let error):
-                    sendError(observer, error.value)
+                    sendError(observer, error)
                 }
             }
         }
@@ -61,9 +61,9 @@ extension Heimdall {
         **Note:** If the access token must be refreshed, network I/O is
         performed.
     
-        :param: request An unauthenticated NSURLRequest.
+        - parameter request: An unauthenticated NSURLRequest.
     
-        :returns: A `SignalProducer` that, when started, creates a signal that
+        - returns: A `SignalProducer` that, when started, creates a signal that
             sends the authenticated request on success or an error if the
             request could not be authenticated.
     */
@@ -72,10 +72,10 @@ extension Heimdall {
             self.authenticateRequest(request) { result in
                 switch result {
                 case .Success(let value):
-                    sendNext(observer, value.value)
+                    sendNext(observer, value)
                     sendCompleted(observer)
                 case .Failure(let error):
-                    sendError(observer, error.value)
+                    sendError(observer, error)
                 }
             }
         }
@@ -86,34 +86,34 @@ extension Heimdall {
     /**
         Requests an access token with the resource owner's password credentials.
 
-        :param: username The resource owner's username.
-        :param: password The resource owner's password.
+        - parameter username: The resource owner's username.
+        - parameter password: The resource owner's password.
 
-        :returns: A signal that sends a `RACUnit` and completes when the
+        - returns: A signal that sends a `RACUnit` and completes when the
             request finishes successfully or sends an error if the request
             finishes with an error.
     */
     @objc
-    public func RH_requestAccessToken(#username: String, password: String) -> RACSignal {
+    public func RH_requestAccessToken(username username: String, password: String) -> RACSignal {
         return toRACSignal(
-            requestAccessToken(username: username, password: password) |> map { _ in RACUnit.defaultUnit() }
+            requestAccessToken(username: username, password: password).map { _ in RACUnit.defaultUnit() }
         )
     }
     
     /**
         Requests an access token with the given grant type.
 
-        :param: grantType The name of the grant type
-        :param: parameters The required parameters for the custom grant type
+        - parameter grantType: The name of the grant type
+        - parameter parameters: The required parameters for the custom grant type
 
-        :returns: A signal that sends a `RACUnit` and completes when the
+        - returns: A signal that sends a `RACUnit` and completes when the
             request finishes successfully or sends an error if the request
             finishes with an error.
     */
     @objc
-    public func RH_requestAccessToken(#grantType: String, parameters: NSDictionary) -> RACSignal {
+    public func RH_requestAccessToken(grantType grantType: String, parameters: NSDictionary) -> RACSignal {
         return toRACSignal(
-            requestAccessToken(grantType: grantType, parameters: parameters as! [ String : String ]) |> map { _ in RACUnit.defaultUnit() }
+            requestAccessToken(grantType: grantType, parameters: parameters as! [ String : String ]).map { _ in RACUnit.defaultUnit() }
         )
     }
 
@@ -126,9 +126,9 @@ extension Heimdall {
         **Note:** If the access token must be refreshed, network I/O is
         performed.
 
-        :param: request An unauthenticated NSURLRequest.
+        - parameter request: An unauthenticated NSURLRequest.
 
-        :returns: A signal that sends the authenticated request on success or
+        - returns: A signal that sends the authenticated request on success or
             an error if the request could not be authenticated.
     */
     @objc

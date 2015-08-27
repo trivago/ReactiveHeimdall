@@ -228,6 +228,8 @@
 		226D4D391A8C96B000191B2A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "B264 GmbH";
 				TargetAttributes = {

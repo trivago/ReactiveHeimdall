@@ -6,7 +6,7 @@ import ReactiveCocoa
 import ReactiveHeimdall
 import Result
 
-let testError = NSError(domain: "MockHeimdall", code: 123, userInfo: ["foo": "bar"])
+let testError = NSError(domain: "MockHeimdall", code: 123, userInfo: nil)
 let testRequest = NSURLRequest(URL: NSURL(string: "http://rheinfabrik.de/members")!)
 
 class MockHeimdall: Heimdall {
@@ -14,7 +14,7 @@ class MockHeimdall: Heimdall {
     var authorizeSuccess = true
     var requestSuccess = true
     
-    override func requestAccessToken(#username: String, password: String, completion: Result<Void, NSError> -> ()) {
+    override func requestAccessToken(username username: String, password: String, completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
             completion(Result(value: ()))
         } else {
@@ -22,7 +22,7 @@ class MockHeimdall: Heimdall {
         }
     }
     
-    override func requestAccessToken(#grantType: String, parameters: [String : String], completion: Result<Void, NSError> -> ()) {
+    override func requestAccessToken(grantType grantType: String, parameters: [String : String], completion: Result<Void, NSError> -> ()) {
         if authorizeSuccess {
             completion(Result(value: ()))
         } else {
