@@ -1,2 +1,2 @@
-github "Rheinfabrik/Heimdall.swift" ~> 1.2.0
-github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.7"
+github "rheinfabrik/Heimdall.swift" "feature/swift-2.0"
+github "ReactiveCocoa/ReactiveCocoa" "swift2"
