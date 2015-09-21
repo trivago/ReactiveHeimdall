@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, '8.0'
 
-  spec.dependency 'Heimdall', '2.0-alpha.1'
+  spec.dependency 'Heimdall', '2.0-alpha.2'
   spec.dependency 'ReactiveCocoa', '4.0-alpha.1'
   spec.framework = 'Foundation'
 
