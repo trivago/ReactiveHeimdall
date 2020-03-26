@@ -16,7 +16,7 @@ KEYCHAIN=ios-build.keychain
 import_certificates ()
 {
     echo "*** Setting up code signing..."
-    local password=cibuild
+    local password=$CIRCLE_KEYCHAIN_PASSWORD
 
     # Create a temporary keychain for code signing.
     security create-keychain -p "$password" "$KEYCHAIN"
