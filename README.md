@@ -1,6 +1,6 @@
 # ReactiveHeimdall
 
-ReactiveHeimdall is a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)-based extension to [Heimdall.swift](https://github.com/rheinfabrik/Heimdall.swift).
+ReactiveHeimdall is a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)-based extension to [Heimdallr.swift](https://github.com/trivago/Heimdallr.swift).
 
 [![Build Status](https://circleci.com/gh/rheinfabrik/ReactiveHeimdall.svg?style=svg&circle-token=a683f89919f4b802dbb7e4a082f3ef09432f6c41)](https://circleci.com/gh/rheinfabrik/ReactiveHeimdall)
 
