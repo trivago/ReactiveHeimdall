@@ -2,8 +2,6 @@
 
 ReactiveHeimdall is a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)-based extension to [Heimdallr.swift](https://github.com/trivago/Heimdallr.swift).
 
-[![Build Status](https://circleci.com/gh/rheinfabrik/ReactiveHeimdall.svg?style=svg&circle-token=a683f89919f4b802dbb7e4a082f3ef09432f6c41)](https://circleci.com/gh/rheinfabrik/ReactiveHeimdall)
-
 ## Installation
 
 Installation is possible via Carthage or CocoaPods, see below for either method:
@@ -15,7 +13,7 @@ Installation is possible via Carthage or CocoaPods, see below for either method:
 1. Add ReactiveHeimdall to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
   ```
-  github "rheinfabrik/ReactiveHeimdall" ~> 2.0
+  github "trivago/ReactiveHeimdall" ~> 2.0
   ```
 
 2. Run `carthage update` to fetch and build Heimdall and its dependencies.
@@ -27,7 +25,7 @@ Installation is possible via Carthage or CocoaPods, see below for either method:
 1. Add ReactiveHeimdall to your [Podfile](https://guides.cocoapods.org/syntax/podfile.html):
 
    ```ruby
-   pod 'ReactiveHeimdall', :git => 'https://github.com/rheinfabrik/ReactiveHeimdall.git', :tag => '2.0'
+   pod 'ReactiveHeimdall', :git => 'https://github.com/trivago/ReactiveHeimdall.git', :tag => '2.0'
    ```
    
 2.  Run `pod install` to fetch and build ReactiveHeimdall and its dependencies.
@@ -49,7 +47,7 @@ signal.subscribeError { error in
 When authenticating a request the signal sends the authenticated request and completes on success
 
 ```swift
-let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.rheinfabrik.de/foobar")!))
+let signal = heimdall.authenticateRequest(NSURLRequest(URL: NSURL(string: "http://www.trivago.com/foobar")!))
 signal.subscribeNext { value in
     let request = value as? NSURLRequest // request is the authenticated `NSURLRequest`
 }
@@ -57,7 +55,3 @@ signal.subscribeError { error in
     // request could not be authorized
 }
 ```
-
-## About
-
-ReactiveHeimdall was built by [Rheinfabrik](http://www.rheinfabrik.de) 🏭
