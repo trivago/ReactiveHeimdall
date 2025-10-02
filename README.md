@@ -1,5 +1,9 @@
 # ReactiveHeimdall
 
+> [!CAUTION]
+> This repository has been archived as of October 2025.  
+> If you wish to update or extend this project, please create a fork.
+
 ReactiveHeimdall is a [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)-based extension to [Heimdallr.swift](https://github.com/trivago/Heimdallr.swift).
 
 ## Installation
